@@ -36,11 +36,10 @@ const Contact = () => {
 
     try {
       console.log("Submitting data:", formData);
-      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}`, {
+      const res = await fetch("https://portfolio-backend01.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-        credentials: "include",
+        body: JSON.stringify(formData),
       });
 
       if (res.ok) {
