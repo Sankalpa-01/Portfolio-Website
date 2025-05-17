@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 5000;
 
 connectDB();
 app.use(cors({
-  origin: "https://portfolio-website-rose-six-68.vercel.app/",
+  origin: process.env.CLIENT_URL,
   credentials: true,
 }));
 
