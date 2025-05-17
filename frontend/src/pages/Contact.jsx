@@ -36,10 +36,11 @@ const Contact = () => {
 
     try {
       console.log("Submitting data:", formData);
-      const res = await fetch("http://localhost:5000/api/contact", {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(data),
+        credentials: "include",
       });
 
       if (res.ok) {
