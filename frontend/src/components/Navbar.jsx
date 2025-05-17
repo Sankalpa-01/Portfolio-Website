@@ -15,6 +15,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-70 text-white z-50 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+        {/* Logo */}
         <div className="text-2xl font-bold text-cyan-400">MyPortfolio</div>
 
         {/* Desktop Menu */}
@@ -34,9 +35,8 @@ const Navbar = () => {
           ))}
         </ul>
 
-
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
+        <div className="md:hidden z-50">
           <button onClick={() => setMenuOpen(!menuOpen)}>
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
@@ -44,21 +44,23 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      {menuOpen && (
-        <ul className="md:hidden bg-black bg-opacity-90 px-4 py-6 space-y-4">
-          {links.map((link) => (
-            <li key={link.name}>
-              <a
-                href={link.href}
-                className="block text-lg hover:text-teal-400 transition duration-300"
-                onClick={() => setMenuOpen(false)} // close menu on click
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      )}
+      <div
+        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-50 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 transform transition-transform duration-300 ${
+          menuOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+
+        {links.map((link) => (
+          <a
+            key={link.name}
+            href={link.href}
+            className="text-xl text-cyan-400 hover:text-teal-400 transition duration-300"
+            onClick={() => setMenuOpen(false)}
+          >
+            {link.name}
+          </a>
+        ))}
+      </div>
     </nav>
   );
 };

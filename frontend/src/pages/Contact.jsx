@@ -120,7 +120,7 @@ const Contact = () => {
         </motion.div>
 
         <motion.div
-          className="w-full lg:w-1/2 h-[400px] flex justify-center items-center"
+          className="w-full lg:w-1/2 h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] flex justify-center items-center"
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
