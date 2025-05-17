@@ -1,40 +1,32 @@
-# 💼 Portfolio Website
+# 🚀 Portfolio Website
 
-An interactive portfolio website built with **React**, **Tailwind CSS**, **Framer Motion**, and **Three.js** with a functional backend contact form using **Node.js**, **Express** and **MongoDB**.
+This is my personal portfolio website built using **React**, **Tailwind CSS**, **Framer Motion**, and **Three.js**. It showcases my projects, skills, contact form, and includes interactive animations.
 
----
 
-## 🚀 Features
+## 🛠️ Tech Stack
 
-- ⚡ Smooth UI with animations (Framer Motion)
-- 🌐 Real-time 3D effects (Three.js - Floating Spheres)
-- 📨 Contact form with live backend connection
-- 🌙 Light/dark mode toggle (if added)
-- ✅ Form validation and success/error feedback
+- **Frontend:** React.js, Tailwind CSS, Framer Motion
+- **3D Animation:** Three.js
+- **Backend:** Node.js, Express
+- **Database:** MongoDB (for storing contact form submissions)
 
 ---
 
-## 🛠 Tech Stack
+## 📸 Features
 
-### Frontend
-- React.js
-- Tailwind CSS
-- Framer Motion
-- Three.js (for canvas animation)
-- Custom components (AnimatedText, FormInput, Button)
-
-### Backend
-- Node.js
-- Express
-- Body-parser
-- CORS
-- MongoDB
+- Animated Hero Section
+- About, Projects, and Skills Sections
+- Smooth Scroll & Animations
+- Contact Form with Email Support
+- 3D Background Elements using Three.js
+- Responsive Design
 
 ---
 
-## 📦 Installation
+## 🧑‍💻 How to Run Locally
 
-### Clone the repo
+### 1. Clone the repository
+
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Sankalpa-01/Portfolio-Website.git
+cd Portfolio-Website
