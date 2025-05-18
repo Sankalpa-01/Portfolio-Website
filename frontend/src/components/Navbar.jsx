@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-70 text-white z-50 shadow-md">
+    <nav className="fixed top-0 left-0 right-0 w-full bg-gray-900 bg-opacity-70 text-white z-50 shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
         {/* Logo */}
         <div className="text-2xl font-bold text-cyan-400">MyPortfolio</div>
@@ -35,11 +35,12 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Menu Toggle */}
-        <div className="md:hidden">
-          <button
+        {/* Mobile Menu Toggle - Positioned properly */}
+        <div className="md:hidden flex items-center">
+          <button 
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-white focus:outline-none"
+            className="text-cyan-400 focus:outline-none"
+            aria-label="Toggle menu"
           >
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
@@ -48,7 +49,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-gray-900 bg-opacity-80 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 z-40">
+        <div className="md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 z-40">
           {links.map((link) => (
             <a
               key={link.name}
@@ -61,16 +62,6 @@ const Navbar = () => {
           ))}
         </div>
       )}
-
-      {/* Fixed top-right toggle button (ensure it stays visible) */}
-      <div className="md:hidden fixed top-4 right-4 z-50">
-        <button
-          onClick={() => setMenuOpen(!menuOpen)}
-          className="text-white focus:outline-none"
-        >
-          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
-        </button>
-      </div>
     </nav>
   );
 };
