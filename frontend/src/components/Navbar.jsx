@@ -44,23 +44,20 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div
-        className={`md:hidden fixed top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-50 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 transform transition-transform duration-300 ${
-          menuOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-
-        {links.map((link) => (
-          <a
-            key={link.name}
-            href={link.href}
-            className="text-xl text-cyan-400 hover:text-teal-400 transition duration-300"
-            onClick={() => setMenuOpen(false)}
-          >
-            {link.name}
-          </a>
-        ))}
-      </div>
+      {menuOpen && (
+        <div className="md:hidden fixed inset-0 bg-gray-900 bg-opacity-70 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 z-40">
+          {links.map((link) => (
+            <a
+              key={link.name}
+              href={link.href}
+              className="text-xl text-cyan-400 hover:text-teal-400 transition duration-300"
+              onClick={() => setMenuOpen(false)}
+            >
+              {link.name}
+            </a>
+          ))}
+        </div>
+      )}
     </nav>
   );
 };
