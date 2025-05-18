@@ -4,6 +4,7 @@ import AnimatedText from "../components/AnimatedText";
 import FormInput from "../components/FormInput";
 import Button from "../components/Button";
 import FloatingSpheres from "../canvas/FloatingSpheres";
+import emailjs from "@emailjs/browser";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -29,13 +30,11 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Handle submit called");
-    
     setSuccessMsg("");
     setErrorMsg("");
 
     try {
-      console.log("Submitting data:", formData);
+      // 1. Send data to backend (DB)
       const res = await fetch("https://portfolio-backend01.onrender.com/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -43,13 +42,32 @@ const Contact = () => {
       });
 
       if (res.ok) {
-        setSuccessMsg("Message sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        // 2. Send Email using EmailJS
+        emailjs
+          .send(
+            "service_ne9cckj",      // ✅ Your EmailJS Service ID
+            "template_jed4d3i",     // ✅ Your EmailJS Template ID
+            {
+              name: formData.name,
+              email: formData.email,
+              message: formData.message,
+            },
+            "-AINRuNgvSLfq7k_A"     // ✅ Your EmailJS Public Key
+          )
+          .then(() => {
+            setSuccessMsg("Message sent and stored successfully!");
+            setFormData({ name: "", email: "", message: "" });
+          })
+          .catch((emailError) => {
+            console.error("EmailJS Error:", emailError);
+            setSuccessMsg("Message saved to DB, but failed to send email.");
+          });
       } else {
         const errData = await res.json();
-        setErrorMsg(errData.message || "Something went wrong.");
+        setErrorMsg(errData.message || "Something went wrong with DB.");
       }
     } catch (error) {
+      console.error("Submit error:", error);
       setErrorMsg("Failed to send message. Please try again later.");
     }
   };
@@ -81,9 +99,6 @@ const Contact = () => {
           <form
             onSubmit={handleSubmit}
             className="space-y-6 p-8 rounded-2xl bg-gray-700 backdrop-blur-md text-cyan-300 shadow-2xl transition duration-500"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
           >
             <FormInput
               label="Name"
@@ -112,10 +127,10 @@ const Contact = () => {
               required
               className="bg-gray-100 text-black"
             />
-            <Button text="Send Message" type="submit"/>
+            <Button text="Send Message" type="submit" />
 
-            {successMsg && <p className="text-green-400">{successMsg}</p>}
-            {errorMsg && <p className="text-red-400">{errorMsg}</p>}
+            {successMsg && <p className="text-green-400 text-center">{successMsg}</p>}
+            {errorMsg && <p className="text-red-400 text-center">{errorMsg}</p>}
           </form>
         </motion.div>
 
