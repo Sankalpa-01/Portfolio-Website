@@ -12,9 +12,19 @@ const Navbar = () => {
     { name: "Contact", href: "#contact" },
   ];
 
+  // Handle navigation and ensure menu closes properly
+  const handleNavigation = (href) => {
+    setMenuOpen(false);
+    // Scroll to element with a slight delay to allow menu to close
+    setTimeout(() => {
+      const element = document.querySelector(href);
+      if (element) element.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  };
+
   return (
-    <nav className="fixed top-0 left-0 right-0 w-full bg-gray-900 bg-opacity-70 text-white z-50 shadow-md">
-      <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3">
+    <nav className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-70 text-white z-50 shadow-md">
+      <div className="flex items-center justify-between px-4 py-3">
         {/* Logo */}
         <div className="text-2xl font-bold text-cyan-400">MyPortfolio</div>
 
@@ -35,11 +45,11 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Menu Toggle - Positioned properly */}
+        {/* Mobile Menu Toggle - Fixed to always show */}
         <div className="md:hidden flex items-center">
           <button 
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-cyan-400 focus:outline-none"
+            className="text-cyan-400 focus:outline-none fixed top-3 right-4 z-50"
             aria-label="Toggle menu"
           >
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
@@ -47,15 +57,15 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu - Full screen overlay */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-gray-900 bg-opacity-90 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 z-40">
+        <div className="md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 z-40">
           {links.map((link) => (
             <a
               key={link.name}
               href={link.href}
               className="text-xl text-cyan-400 hover:text-teal-400 transition duration-300"
-              onClick={() => setMenuOpen(false)}
+              onClick={() => handleNavigation(link.href)}
             >
               {link.name}
             </a>
@@ -65,5 +75,6 @@ const Navbar = () => {
     </nav>
   );
 };
+
 
 export default Navbar;
