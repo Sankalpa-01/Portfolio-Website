@@ -36,8 +36,11 @@ const Navbar = () => {
         </ul>
 
         {/* Mobile Menu Toggle */}
-        <div className="md:hidden z-50">
-          <button onClick={() => setMenuOpen(!menuOpen)}>
+        <div className="md:hidden">
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="text-white focus:outline-none"
+          >
             {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
@@ -45,7 +48,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <div className="md:hidden fixed inset-0 bg-gray-900 bg-opacity-70 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 z-40">
+        <div className="md:hidden fixed inset-0 bg-gray-900 bg-opacity-80 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 z-40">
           {links.map((link) => (
             <a
               key={link.name}
@@ -58,6 +61,16 @@ const Navbar = () => {
           ))}
         </div>
       )}
+
+      {/* Fixed top-right toggle button (ensure it stays visible) */}
+      <div className="md:hidden fixed top-4 right-4 z-50">
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="text-white focus:outline-none"
+        >
+          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+        </button>
+      </div>
     </nav>
   );
 };
