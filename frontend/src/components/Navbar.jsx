@@ -26,10 +26,12 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-70 text-white z-50 shadow-md">
       <div className="flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <div className="text-2xl font-bold text-cyan-400">MyPortfolio</div>
+        <div className="text-2xl font-bold text-cyan-400 ml-32">
+          MyPortfolio
+        </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 text-lg">
+        <ul className="hidden md:flex space-x-8 text-lg mr-30">
           {links.map((link) => (
             <li key={link.name} className="relative group">
               <a
@@ -45,9 +47,9 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Menu Toggle - Fixed to always show */}
+        {/* Mobile Menu Toggle */}
         <div className="md:hidden flex items-center">
-          <button 
+          <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-cyan-400 focus:outline-none fixed top-3 right-4 z-50"
             aria-label="Toggle menu"
@@ -57,7 +59,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu - Full screen overlay */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden fixed inset-0 bg-gray-900 bg-opacity-95 backdrop-blur-sm flex flex-col items-center justify-center space-y-6 z-40">
           {links.map((link) => (
@@ -75,6 +77,5 @@ const Navbar = () => {
     </nav>
   );
 };
-
 
 export default Navbar;
