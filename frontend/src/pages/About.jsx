@@ -34,8 +34,8 @@ const About = () => {
         >
           <p className="text-base sm:text-lg leading-relaxed text-gray-300">
             Hello! I'm{" "}
-            <span className="font-semibold text-cyan-400">Sankalpa</span>, a
-            2nd year undergraduate student at{" "}
+            <span className="font-semibold text-cyan-400">Sankalpa</span>, a 3rd
+            year undergraduate student at{" "}
             <span className="font-semibold text-cyan-400">
               NIT Rourkela, Industrial Design Department
             </span>{" "}
@@ -47,7 +47,7 @@ const About = () => {
           <p className="text-base sm:text-lg leading-relaxed text-gray-300">
             I’m skilled in technologies like{" "}
             <span className="font-medium text-cyan-400">
-              React, Tailwind CSS, Node.js, and MongoDB
+              React, Tailwind CSS, Node.js, MongoDB, SQL and Next.js
             </span>
             . I’m constantly learning and exploring new ways to build modern web
             applications.
