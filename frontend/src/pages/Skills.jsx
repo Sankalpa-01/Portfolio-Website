@@ -1,4 +1,11 @@
-import { FaHtml5, FaJs, FaReact, FaNodeJs, FaDatabase } from "react-icons/fa";
+import {
+  FaHtml5,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
+  FaCss3,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const skills = [
@@ -6,7 +13,18 @@ const skills = [
   { name: "Node.js", icon: <FaNodeJs /> },
   { name: "Express.js", icon: <FaNodeJs /> },
   { name: "MongoDB", icon: <FaDatabase /> },
-  { name: "MySQL", icon: <FaDatabase /> },
+  { name: "SQL", icon: <FaDatabase /> },
+  {
+    name: "Next.js",
+    icon: (
+      <img
+        src="./Next-JS_logo.jpeg"
+        alt="Next.js"
+        className="w-6 h-6 object-contain"
+      />
+    ),
+  },
+  { name: "Tailwind CSS", icon: <FaCss3 /> },
 ];
 
 const containerVariants = {
@@ -35,7 +53,9 @@ const Skills = () => {
     <section className="relative bg-gray-900 py-24 text-white" id="skills">
       <div className="max-w-4xl mx-auto text-center mb-16 px-4">
         <h2 className="text-4xl font-bold text-cyan-400">Skills</h2>
-        <p className="text-gray-300 mt-2 font-medium text-xl">Tech stack I work with</p>
+        <p className="text-gray-300 mt-2 font-medium text-xl">
+          Tech stack I work with
+        </p>
       </div>
 
       <motion.div
@@ -55,17 +75,24 @@ const Skills = () => {
             return (
               <motion.div
                 key={index}
-                className={`relative w-full flex flex-col items-center md:flex-row ${isLeft ? "md:justify-start" : "md:justify-end"}`}
+                className={`relative w-full flex flex-col items-center md:flex-row ${
+                  isLeft ? "md:justify-start" : "md:justify-end"
+                }`}
                 custom={direction}
                 variants={cardVariants}
               >
                 <div
                   className={`relative group bg-gradient-to-br from-gray-800 to-gray-700 border border-cyan-500/20 text-white px-6 py-4 rounded-xl shadow-xl max-w-[75%]  transition-transform duration-300 hover:scale-105 hover:shadow-[0_0_20px_5px_rgba(34,211,238,0.5)] hover:bg-cyan-300/10 ${
-                  isLeft ? "md:ml-6 md:text-left text-center" : "md:mr-6 md:text-right text-center"
-                }`}
-
+                    isLeft
+                      ? "md:ml-6 md:text-left text-center"
+                      : "md:mr-6 md:text-right text-center"
+                  }`}
                 >
-                  <div className={`flex items-center gap-3 text-xl text-cyan-400 justify-center md:justify-start ${isLeft ? "" : "flex-row-reverse"}`}>
+                  <div
+                    className={`flex items-center gap-3 text-xl text-cyan-400 justify-center md:justify-start ${
+                      isLeft ? "" : "flex-row-reverse"
+                    }`}
+                  >
                     {skill.icon}
                     <span className="font-semibold">{skill.name}</span>
                   </div>
@@ -75,7 +102,11 @@ const Skills = () => {
                   className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-cyan-400 border-4 border-white rounded-full z-20"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  transition={{ delay: 0.2 * index, type: "spring", stiffness: 100 }}
+                  transition={{
+                    delay: 0.2 * index,
+                    type: "spring",
+                    stiffness: 100,
+                  }}
                 />
               </motion.div>
             );
