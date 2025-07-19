@@ -37,7 +37,6 @@ const Home = () => {
       >
         {/* Left Section */}
         <div className="z-10 md:w-1/2 space-y-6 md:space-y-8 px-6 md:pl-18 flex flex-col items-center md:items-start text-center md:text-left">
-
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-left">
             Hello, I'm <br />
             <span className="text-cyan-400">Sankalpa Panda</span> <br />
@@ -54,7 +53,8 @@ const Home = () => {
           </h1>
 
           <p className="text-gray-300 text-lg max-w-xl">
-            I'm a developer with experience in frontend and backend engineering. I love building responsive, fast, and functional web experiences.
+            I'm a developer with experience in frontend and backend engineering.
+            I love building responsive, fast, and functional web experiences.
           </p>
 
           <div className="flex space-x-6 h-12">
@@ -65,7 +65,7 @@ const Home = () => {
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              href="/123ID0907_SANKALPA_PANDA_INTERN_FINAL_.pdf"
+              href="/123ID0907_SANKALPA_PANDA_FTE.pdf"
               download
               className="inline-block px-6 py-2 bg-gradient-to-r from-cyan-300 to-cyan-400 text-black font-semibold rounded-full shadow-lg hover:shadow-cyan-500/50 transition duration-300"
             >
