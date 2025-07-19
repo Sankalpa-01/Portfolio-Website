@@ -80,7 +80,7 @@ const Home = () => {
                 href="mailto:sankalpanda@example.com"
                 className="text-cyan-400 hover:underline"
               >
-                sankalpanda@example.com
+                sankalpaanda@gmail.com
               </a>
             </p>
           </div>
