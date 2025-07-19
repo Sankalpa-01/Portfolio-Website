@@ -5,21 +5,46 @@ const projects = [
   {
     title: "Sales Management System",
     description: "A fully functional website where you can manage your sales.",
-    imageSrc: '/download (10).jpeg',
+    imageSrc: "/download (10).jpeg",
     link: "https://github.com/Sankalpa-01/Sales-Management-System/tree/master",
   },
   {
-    title: "SoftSell",
-    description: "FrontEnd of a e-commerce website where you can sell your licenses.",
-    imageSrc: "/conceptual-business-illustration-words-soft-260nw-1035160903.webp",
-    link: "https://github.com/Sankalpa-01/SoftSell-Landing",
+    title: "Feedback Management System",
+    description:
+      "A fully functional website where you can make Forms and send to user to fill it and see the response.",
+    imageSrc: "/download (10).jpeg",
+    link: "https://feedback-management-frontend.vercel.app/login",
   },
   {
-    title: "UniSwap",
-    description: "FrontEnd of a website where you can buy, rent and sell products.",
+    title: "MusicListerner",
+    description:
+      "A fully functional website where you can listen to music and create your own playlist.",
+    imageSrc:
+      "/conceptual-business-illustration-words-soft-260nw-1035160903.webp",
+    link: "https://music-listener.onrender.com/",
+  },
+  {
+    title: "Distributed Job Scheduler",
+    description:
+      "Fully functional website where you can create jobs and schedule it .",
     imageSrc: "/download (11).jpeg",
-    link: "https://github.com/Titli06/UniSwap",
-  }
+    link: "https://distributed-job-scheduler-v764.vercel.app/",
+  },
+  {
+    title: "Weather App",
+    description:
+      "Fully functional website where you can see the weather of any city.",
+    imageSrc: "/download (11).jpeg",
+    link: "https://future-fs-02-weather-app-f9ql.vercel.app/",
+  },
+  {
+    title: "SoftSell",
+    description:
+      "FrontEnd of a e-commerce website where you can sell your licenses.",
+    imageSrc:
+      "/conceptual-business-illustration-words-soft-260nw-1035160903.webp",
+    link: "https://github.com/Sankalpa-01/SoftSell-Landing",
+  },
 ];
 
 const fadeInUp = {
