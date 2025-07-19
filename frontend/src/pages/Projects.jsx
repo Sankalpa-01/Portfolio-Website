@@ -12,29 +12,28 @@ const projects = [
     title: "Feedback Management System",
     description:
       "A fully functional website where you can make Forms and send to user to fill it and see the response.",
-    imageSrc: "/download (10).jpeg",
+    imageSrc: "/Feedback Management.jpeg",
     link: "https://feedback-management-frontend.vercel.app/login",
   },
   {
     title: "MusicListerner",
     description:
       "A fully functional website where you can listen to music and create your own playlist.",
-    imageSrc:
-      "/conceptual-business-illustration-words-soft-260nw-1035160903.webp",
+    imageSrc: "/Music_Listener.jpeg",
     link: "https://music-listener.onrender.com/",
   },
   {
     title: "Distributed Job Scheduler",
     description:
       "Fully functional website where you can create jobs and schedule it .",
-    imageSrc: "/download (11).jpeg",
+    imageSrc: "/Distributed Job Scheduler.jpeg",
     link: "https://distributed-job-scheduler-v764.vercel.app/",
   },
   {
     title: "Weather App",
     description:
       "Fully functional website where you can see the weather of any city.",
-    imageSrc: "/download (11).jpeg",
+    imageSrc: "/Weather Image.jpeg",
     link: "https://future-fs-02-weather-app-f9ql.vercel.app/",
   },
   {
