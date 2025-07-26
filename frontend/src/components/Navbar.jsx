@@ -26,7 +26,7 @@ const Navbar = () => {
     <nav className="fixed top-0 left-0 w-full bg-gray-900 bg-opacity-70 text-white z-50 shadow-md">
       <div className="flex items-center justify-between px-4 py-3">
         {/* Logo */}
-        <div className="text-2xl font-bold text-cyan-400 ml-32">
+        <div className="text-2xl font-bold text-cyan-400 md:ml-32 ml-0 text-center w-full md:w-auto">
           MyPortfolio
         </div>
 

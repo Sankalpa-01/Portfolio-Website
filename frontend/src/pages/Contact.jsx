@@ -35,24 +35,27 @@ const Contact = () => {
 
     try {
       // 1. Send data to backend (DB)
-      const res = await fetch("https://portfolio-backend01.onrender.com/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const res = await fetch(
+        "https://portfolio-backend01.onrender.com/api/contact",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (res.ok) {
         // 2. Send Email using EmailJS
         emailjs
           .send(
-            "service_ne9cckj",      // ✅ Your EmailJS Service ID
-            "template_jed4d3i",     // ✅ Your EmailJS Template ID
+            "service_ne9cckj", // ✅ Your EmailJS Service ID
+            "template_jed4d3i", // ✅ Your EmailJS Template ID
             {
               name: formData.name,
               email: formData.email,
               message: formData.message,
             },
-            "-AINRuNgvSLfq7k_A"     // ✅ Your EmailJS Public Key
+            "-AINRuNgvSLfq7k_A" // ✅ Your EmailJS Public Key
           )
           .then(() => {
             setSuccessMsg("Message sent and stored successfully!");
@@ -129,7 +132,9 @@ const Contact = () => {
             />
             <Button text="Send Message" type="submit" />
 
-            {successMsg && <p className="text-green-400 text-center">{successMsg}</p>}
+            {successMsg && (
+              <p className="text-green-400 text-center">{successMsg}</p>
+            )}
             {errorMsg && <p className="text-red-400 text-center">{errorMsg}</p>}
           </form>
         </motion.div>
