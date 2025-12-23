@@ -1,10 +1,11 @@
-import { useState } from 'react'
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Projects from './pages/Projects';
-import Skills from './pages/Skills';
+import { useState } from "react";
+import Layout from "./components/Layout";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Projects from "./pages/Projects";
+import Skills from "./pages/Skills";
+import Experience from "./pages/Experience";
 
 function App() {
   return (
@@ -12,12 +13,13 @@ function App() {
       <Layout>
         <Home />
         <About />
+        <Experience />
         <Skills />
         <Projects />
         <Contact />
       </Layout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
