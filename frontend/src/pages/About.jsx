@@ -1,4 +1,4 @@
-import ProfilePic from "../assets/WhatsApp Image 2025-05-15 at 21.18.26_6ffb6bd4.jpg";
+import ProfilePic from "../assets/Second Image.jpg";
 import { motion } from "framer-motion";
 
 const About = () => {

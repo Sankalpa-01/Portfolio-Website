@@ -143,7 +143,11 @@ const Home = () => {
                 And I'm a{" "}
                 <AnimatedText
                   className="text-cyan-400"
-                  texts={["Web Developer", "Full Stack Engineer", "C++ Coder"]}
+                  texts={[
+                    "Web Developer",
+                    "Full Stack Engineer",
+                    "C++ Programmer",
+                  ]}
                   typingSpeed={100}
                   deletingSpeed={50}
                   pauseTime={2000}
