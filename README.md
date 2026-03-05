@@ -8,7 +8,7 @@ This is my personal portfolio website built using **React**, **Tailwind CSS**, *
 - **Frontend:** React.js, Tailwind CSS, Framer Motion
 - **3D Animation:** Three.js
 - **Backend:** Node.js, Express
-- **Database:** MongoDB (for storing contact form submissions)
+- **Database:** MySQL (for storing contact form submissions)
 
 ---
 
