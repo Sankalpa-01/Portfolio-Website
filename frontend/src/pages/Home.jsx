@@ -102,7 +102,7 @@
 
 import AnimatedText from "../components/AnimatedText";
 import SocialIcons from "../components/SocialIcons";
-import ProfilePic from "../assets/First Image.jpeg";
+import ProfilePic from "../assets/Profile_Image.jpeg";
 import Navbar from "../components/Navbar";
 import { motion } from "framer-motion";
 
@@ -231,7 +231,7 @@ const Home = () => {
                 className="
                   relative
                   w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80
-                  rounded-full object-cover
+                  rounded-full object-cover object-top
                   border-4 border-cyan-400
                   shadow-[0_0_80px_rgba(0,255,255,0.45)]
                 "

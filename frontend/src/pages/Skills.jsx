@@ -123,9 +123,10 @@ import {
   FaReact,
   FaNodeJs,
   FaCss3,
-  FaPython, // Added Python icon
+  FaPython,
+  FaDatabase // Added Python icon
 } from "react-icons/fa";
-import { SiPostgresql, SiRedis, SiMongodb } from "react-icons/si"; // Added specific DB icons
+import { SiPostgresql, SiRedis, SiMongodb } from "react-icons/si"; 
 import { motion } from "framer-motion";
 
 const skills = [
@@ -152,6 +153,7 @@ const skills = [
   { name: "MongoDB", icon: <SiMongodb className="text-green-400" /> }, // Swapped to specific Mongo icon
   { name: "PostgreSQL", icon: <SiPostgresql className="text-blue-300" /> }, // Added
   { name: "Redis", icon: <SiRedis className="text-red-500" /> }, // Added
+  { name: "Neon", icon: <FaDatabase className="text-emerald-500" /> },
 ];
 
 // Animation for the container to stagger the appearance of cards
