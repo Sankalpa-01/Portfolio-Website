@@ -146,7 +146,8 @@ const Home = () => {
                   texts={[
                     "Web Developer",
                     "Full Stack Engineer",
-                    "C++ Programmer",
+                    "C/C++ Programmer",
+                    "ML Engineer",
                   ]}
                   typingSpeed={100}
                   deletingSpeed={50}
